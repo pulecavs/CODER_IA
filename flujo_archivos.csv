@@ -1,0 +1,16 @@
+Aplicacion,Archivo,Ruta,Ruta_Destino,Aplicacion_Destino,Hora Salida,Hora arribo,SLA,Log Transmision,Soporte,Soporte_Destino
+EBO,accounting.dat,ebo/domain/out,ldap/archive/in,LATAM_DAP,20:00,21:00,23:00,ebo/domain/log.txt,soporte_ebo@pule.com,soporte_ldap@pule.com
+EBO,bonds.dat,ebo/domain/out,ldap/archive/in,LATAM_DAP,20:00,21:00,23:00,ebo/domain/log.txt,soporte_ebo@pule.com,soporte_ldap@pule.com
+EBO,deals.dat,ebo/domain/out,ldap/archive/in,LATAM_DAP,20:00,21:00,23:00,ebo/domain/log.txt,soporte_ebo@pule.com,soporte_ldap@pule.com
+EBO,rates.dat,ebo/domain/out,ldap/archive/in,LATAM_DAP,20:00,21:00,23:00,ebo/domain/log.txt,soporte_ebo@pule.com,soporte_ldap@pule.com
+EBO,position.dat,ebo/domain/out,ldap/archive/in,LATAM_DAP,20:00,21:00,23:00,ebo/domain/log.txt,soporte_ebo@pule.com,soporte_ldap@pule.com
+EBO,futures.dat,ebo/domain/out,ldap/archive/in,LATAM_DAP,20:00,21:00,23:00,ebo/domain/log.txt,soporte_ebo@pule.com,soporte_ldap@pule.com
+EBO,derivates.dat,ebo/domain/out,ldap/archive/in,LATAM_DAP,20:00,21:00,23:00,ebo/domain/log.txt,soporte_ebo@pule.com,soporte_ldap@pule.com
+TDU,flex.dat,tdu/domain/out,flex/archive/in,Flex,20:30,21:30,0:00,tdu/domain/log.txt,soporte_tdu@pule.com,soporte_flex@pule.com
+TDU,docs.dat,tdu/domain/out,docs/archive/in,Docs,20:45,21:45,1:00,tdu/domain/log.txt,soporte_tdu@pule.com,soporte_docs@pule.com
+TDU,i200.dat,tdu/domain/out,i200/archive/in,i200,21:00,22:00,2:00,tdu/domain/log.txt,soporte_tdu@pule.com,soporte_i200@pule.com
+BACA,cosmos.dat,baca/domain/out,cosmos/archive/in,Cosmos,20:30,21:30,0:00,baca/domain/log.txt,soporte_baca@pule.com,soporte_cosmos@pule.com
+BACA,postrade.dat,baca/domain/out,post/archive/in,Postrade,20:45,21:45,1:00,baca/domain/log.txt,soporte_baca@pule.com,soporte_postrade@pule.com
+BACA,rfc.dat,baca/domain/out,rfc/archive/in,RFC,21:00,22:00,2:00,baca/domain/log.txt,soporte_baca@pule.com,soporte_rfc@pule.com
+LDL,tableau.dat,ldl/domain/out,tableau/archive/in,Tableau,19:30,20:30,23:00,ldl/domain/log.txt,soporte_ldl@pule.com,soporte_tableau@pule.com
+LDL,quick.dat,ldl/domain/out,qck/archive/in,Quicklik,19:30,20:30,23:00,ldl/domain/log.txt,soporte_ldl@pule.com,soporte_qcklik@pule.com
