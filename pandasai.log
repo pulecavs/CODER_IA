@@ -1,0 +1,2895 @@
+2024-03-27 19:51:00 [INFO] Question: Mostrame los 5 primeros pasajeros hombres
+2024-03-27 19:51:03 [INFO] Running PandasAI with openai LLM...
+2024-03-27 19:51:03 [INFO] Prompt ID: e471c5ae-a274-4fc1-8cf9-beb3ded1c470
+2024-03-27 19:51:03 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 19:51:03 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 19:51:03 [INFO] Executing Step 1: CacheLookup
+2024-03-27 19:51:04 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 19:51:04 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Mostrame los 5 primeros pasajeros hombres
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 19:51:04 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 19:51:07 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Mostrame los 5 primeros pasajeros hombres
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-03-27 19:51:07 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+male_passengers = dfs[0][dfs[0]['Sex'] == 'male'].head(5)
+
+# Declare result var
+result = {
+    "type": "dataframe",
+    "value": male_passengers
+}
+            ```
+            
+2024-03-27 19:51:07 [INFO] Executing Step 4: CachePopulation
+2024-03-27 19:51:07 [INFO] Executing Step 5: CodeExecution
+2024-03-27 19:51:07 [INFO] 
+Code running:
+```
+male_passengers = dfs[0][dfs[0]['Sex'] == 'male'].head(5)
+result = {'type': 'dataframe', 'value': male_passengers}
+        ```
+2024-03-27 19:51:08 [INFO] Executing Step 6: ResultValidation
+2024-03-27 19:51:08 [INFO] Answer: {'type': 'dataframe', 'value':    PassengerId  Survived  Pclass                            Name   Sex   Age  \
+0            1         0       3         Braund, Mr. Owen Harris  male  22.0   
+4            5         0       3        Allen, Mr. William Henry  male  35.0   
+5            6         0       3                Moran, Mr. James  male   NaN   
+6            7         0       1         McCarthy, Mr. Timothy J  male  54.0   
+7            8         0       3  Palsson, Master. Gosta Leonard  male   2.0   
+
+   SibSp  Parch     Ticket     Fare Cabin Embarked  
+0      1      0  A/5 21171   7.2500   NaN        S  
+4      0      0     373450   8.0500   NaN        S  
+5      0      0     330877   8.4583   NaN        Q  
+6      0      0      17463  51.8625   E46        S  
+7      3      1     349909  21.0750   NaN        S  }
+2024-03-27 19:51:08 [INFO] Executing Step 7: ResultParsing
+2024-03-27 19:52:15 [INFO] Question: Mostrame el nombre del pasajero de mayor edad y su edad
+2024-03-27 19:52:15 [INFO] Running PandasAI with openai LLM...
+2024-03-27 19:52:15 [INFO] Prompt ID: fa3fd325-e1f9-4d4f-8d64-5fea6ed0e9a1
+2024-03-27 19:52:15 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 19:52:15 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 19:52:15 [INFO] Executing Step 1: CacheLookup
+2024-03-27 19:52:15 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 19:52:15 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Mostrame el nombre del pasajero de mayor edad y su edad
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 19:52:15 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 19:52:17 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Mostrame el nombre del pasajero de mayor edad y su edad
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-03-27 19:52:18 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Find the passenger with the highest age
+max_age_idx = dfs[0]['Age'].idxmax()
+passenger_name = dfs[0].loc[max_age_idx, 'Name']
+passenger_age = dfs[0].loc[max_age_idx, 'Age']
+
+result = {"type": "string", "value": f"The oldest passenger is {passenger_name} with an age of {passenger_age}."}
+            ```
+            
+2024-03-27 19:52:18 [INFO] Executing Step 4: CachePopulation
+2024-03-27 19:52:18 [INFO] Executing Step 5: CodeExecution
+2024-03-27 19:52:18 [INFO] 
+Code running:
+```
+max_age_idx = dfs[0]['Age'].idxmax()
+passenger_name = dfs[0].loc[max_age_idx, 'Name']
+passenger_age = dfs[0].loc[max_age_idx, 'Age']
+result = {'type': 'string', 'value': f'The oldest passenger is {passenger_name} with an age of {passenger_age}.'}
+        ```
+2024-03-27 19:52:18 [INFO] Executing Step 6: ResultValidation
+2024-03-27 19:52:18 [INFO] Answer: {'type': 'string', 'value': 'The oldest passenger is Barkworth, Mr. Algernon Henry Wilson with an age of 80.0.'}
+2024-03-27 19:52:18 [INFO] Executing Step 7: ResultParsing
+2024-03-27 19:53:02 [INFO] Question: Mostrame el valor promedio del precio de los pasajes
+2024-03-27 19:53:02 [INFO] Running PandasAI with openai LLM...
+2024-03-27 19:53:02 [INFO] Prompt ID: 316d7091-d912-46cd-9dd7-0dd36c0f6736
+2024-03-27 19:53:02 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 19:53:02 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 19:53:02 [INFO] Executing Step 1: CacheLookup
+2024-03-27 19:53:02 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 19:53:03 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Mostrame el valor promedio del precio de los pasajes
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 19:53:03 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 19:53:06 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Mostrame el valor promedio del precio de los pasajes
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-03-27 19:53:06 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Calculate the average fare
+average_fare = dfs[0]['Fare'].mean()
+
+# Declare result variable
+result = {"type": "string", "value": f"The average fare price is ${average_fare:.2f}"}
+            ```
+            
+2024-03-27 19:53:06 [INFO] Executing Step 4: CachePopulation
+2024-03-27 19:53:06 [INFO] Executing Step 5: CodeExecution
+2024-03-27 19:53:06 [INFO] 
+Code running:
+```
+average_fare = dfs[0]['Fare'].mean()
+result = {'type': 'string', 'value': f'The average fare price is ${average_fare:.2f}'}
+        ```
+2024-03-27 19:53:06 [INFO] Executing Step 6: ResultValidation
+2024-03-27 19:53:06 [INFO] Answer: {'type': 'string', 'value': 'The average fare price is $32.20'}
+2024-03-27 19:53:06 [INFO] Executing Step 7: ResultParsing
+2024-03-27 19:54:59 [INFO] Question: Cuantas mujeres sobrevivieron?
+2024-03-27 19:54:59 [INFO] Running PandasAI with openai LLM...
+2024-03-27 19:54:59 [INFO] Prompt ID: 162291bd-3688-4287-a8e6-56094216f8e8
+2024-03-27 19:55:00 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 19:55:00 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 19:55:00 [INFO] Executing Step 1: CacheLookup
+2024-03-27 19:55:00 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 19:55:00 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Cuantas mujeres sobrevivieron?
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 19:55:00 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 19:55:06 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Cuantas mujeres sobrevivieron?
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-03-27 19:55:06 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Filter the dataframe to get only the rows where Sex is female and Survived is 1
+female_survivors = dfs[0][(dfs[0]['Sex'] == 'female') & (dfs[0]['Survived'] == 1)]
+
+# Count the number of female survivors
+num_female_survivors = female_survivors.shape[0]
+
+# Declare result variable
+result = {"type": "number", "value": num_female_survivors}
+            ```
+            
+2024-03-27 19:55:06 [INFO] Executing Step 4: CachePopulation
+2024-03-27 19:55:06 [INFO] Executing Step 5: CodeExecution
+2024-03-27 19:55:06 [INFO] 
+Code running:
+```
+female_survivors = dfs[0][(dfs[0]['Sex'] == 'female') & (dfs[0]['Survived'] == 1)]
+num_female_survivors = female_survivors.shape[0]
+result = {'type': 'number', 'value': num_female_survivors}
+        ```
+2024-03-27 19:55:06 [INFO] Executing Step 6: ResultValidation
+2024-03-27 19:55:06 [INFO] Answer: {'type': 'number', 'value': 233}
+2024-03-27 19:55:06 [INFO] Executing Step 7: ResultParsing
+2024-03-27 19:55:14 [INFO] Question: Cuantas hombres sobrevivieron?
+2024-03-27 19:55:14 [INFO] Running PandasAI with openai LLM...
+2024-03-27 19:55:15 [INFO] Prompt ID: c3ac8d57-85b4-47ad-a25c-d3e244cc97b0
+2024-03-27 19:55:15 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 19:55:15 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 19:55:15 [INFO] Executing Step 1: CacheLookup
+2024-03-27 19:55:15 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 19:55:15 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Cuantas hombres sobrevivieron?
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 19:55:15 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 19:55:18 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Cuantas hombres sobrevivieron?
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-03-27 19:55:18 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Filter the dataframe to get only male passengers who survived
+male_survived = dfs[0][(dfs[0]['Sex'] == 'male') & (dfs[0]['Survived'] == 1)]
+
+# Count the number of male passengers who survived
+num_male_survived = len(male_survived)
+
+# Declare result variable
+result = {"type": "number", "value": num_male_survived}
+            ```
+            
+2024-03-27 19:55:18 [INFO] Executing Step 4: CachePopulation
+2024-03-27 19:55:18 [INFO] Executing Step 5: CodeExecution
+2024-03-27 19:55:18 [INFO] 
+Code running:
+```
+male_survived = dfs[0][(dfs[0]['Sex'] == 'male') & (dfs[0]['Survived'] == 1)]
+num_male_survived = len(male_survived)
+result = {'type': 'number', 'value': num_male_survived}
+        ```
+2024-03-27 19:55:18 [INFO] Executing Step 6: ResultValidation
+2024-03-27 19:55:18 [INFO] Answer: {'type': 'number', 'value': 109}
+2024-03-27 19:55:18 [INFO] Executing Step 7: ResultParsing
+2024-03-27 19:59:38 [INFO] Question: Grafico de barras de cantidad de pasajeros por clase
+2024-03-27 19:59:38 [INFO] Running PandasAI with openai LLM...
+2024-03-27 19:59:38 [INFO] Prompt ID: 67fc78f4-efd5-41eb-9aa8-b1ca67800129
+2024-03-27 19:59:38 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 19:59:38 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 19:59:38 [INFO] Executing Step 1: CacheLookup
+2024-03-27 19:59:38 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 19:59:38 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Grafico de barras de cantidad de pasajeros por clase
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 19:59:38 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 19:59:44 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Grafico de barras de cantidad de pasajeros por clase
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-03-27 19:59:44 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Count the number of passengers in each class
+passengers_per_class = dfs[0]['Pclass'].value_counts()
+
+# Create a bar plot
+plt.figure(figsize=(8, 6))
+passengers_per_class.plot(kind='bar', color='skyblue')
+plt.title('Number of Passengers per Class')
+plt.xlabel('Class')
+plt.ylabel('Number of Passengers')
+plt.xticks(rotation=0)
+plt.show()
+
+# Declare result variable
+result = {"type": "plot", "value": "bar_chart_passengers_per_class.png"}
+            ```
+            
+2024-03-27 19:59:44 [INFO] Executing Step 4: CachePopulation
+2024-03-27 19:59:44 [INFO] Executing Step 5: CodeExecution
+2024-03-27 19:59:44 [INFO] Saving charts to C:\CoderHouse\65805\Clase_6\exports\charts\temp_chart.png
+2024-03-27 19:59:44 [INFO] 
+Code running:
+```
+passengers_per_class = dfs[0]['Pclass'].value_counts()
+plt.figure(figsize=(8, 6))
+passengers_per_class.plot(kind='bar', color='skyblue')
+plt.title('Number of Passengers per Class')
+plt.xlabel('Class')
+plt.ylabel('Number of Passengers')
+plt.xticks(rotation=0)
+plt.show()
+result = {'type': 'plot', 'value': 'C:/CoderHouse/65805/Clase_6/exports/charts/temp_chart.png'}
+        ```
+2024-03-27 19:59:46 [ERROR] Pipeline failed on step 5: [Errno 2] No such file or directory: 'C:/CoderHouse/65805/Clase_6/exports/charts/temp_chart.png'
+2024-03-27 20:01:10 [INFO] Question: Grafico de torta de cantidad de mujeres y hombres con la etiqueta del porcentaje de cada uno
+2024-03-27 20:01:10 [INFO] Running PandasAI with openai LLM...
+2024-03-27 20:01:10 [INFO] Prompt ID: e29504e5-69b1-40ec-8712-6b9a346f61fc
+2024-03-27 20:01:10 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 20:01:10 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 20:01:10 [INFO] Executing Step 1: CacheLookup
+2024-03-27 20:01:10 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 20:01:10 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Grafico de torta de cantidad de mujeres y hombres con la etiqueta del porcentaje de cada uno
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 20:01:10 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 20:01:15 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Grafico de torta de cantidad de mujeres y hombres con la etiqueta del porcentaje de cada uno
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2024-03-27 20:01:15 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Count the number of males and females
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title('Distribution of Passengers by Gender')
+
+plt.show()
+            ```
+            
+2024-03-27 20:01:15 [INFO] Executing Step 4: CachePopulation
+2024-03-27 20:01:15 [INFO] Executing Step 5: CodeExecution
+2024-03-27 20:01:15 [INFO] 
+Code running:
+```
+gender_counts = dfs[0]['Sex'].value_counts()
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Distribution of Passengers by Gender')
+plt.show()
+        ```
+2024-03-27 20:01:15 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 64, in execute
+    result = code_manager.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+2024-03-27 20:01:15 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-03-27 20:01:15 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-03-27 20:01:15 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-03-27 20:01:15 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+The user asked the following question:
+### QUERY
+ Mostrame el nombre del pasajero de mayor edad y su edad
+### ANSWER
+ The oldest passenger is Barkworth, Mr. Algernon Henry Wilson with an age of 80.0.
+### QUERY
+ Mostrame el valor promedio del precio de los pasajes
+### ANSWER
+ The average fare price is $32.20
+### QUERY
+ Cuantas mujeres sobrevivieron?
+### ANSWER
+ 233
+### QUERY
+ Cuantas hombres sobrevivieron?
+### ANSWER
+ 109
+### QUERY
+ Grafico de barras de cantidad de pasajeros por clase
+### QUERY
+ Grafico de torta de cantidad de mujeres y hombres con la etiqueta del porcentaje de cada uno
+
+You generated this python code:
+# TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Count the number of males and females
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title('Distribution of Passengers by Gender')
+
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 64, in execute
+    result = code_manager.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+2024-03-27 20:01:15 [INFO] Executing Step 1: CodeGenerator
+2024-03-27 20:01:17 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+The user asked the following question:
+### QUERY
+ Mostrame el nombre del pasajero de mayor edad y su edad
+### ANSWER
+ The oldest passenger is Barkworth, Mr. Algernon Henry Wilson with an age of 80.0.
+### QUERY
+ Mostrame el valor promedio del precio de los pasajes
+### ANSWER
+ The average fare price is $32.20
+### QUERY
+ Cuantas mujeres sobrevivieron?
+### ANSWER
+ 233
+### QUERY
+ Cuantas hombres sobrevivieron?
+### ANSWER
+ 109
+### QUERY
+ Grafico de barras de cantidad de pasajeros por clase
+### QUERY
+ Grafico de torta de cantidad de mujeres y hombres con la etiqueta del porcentaje de cada uno
+
+You generated this python code:
+# TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Count the number of males and females
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title('Distribution of Passengers by Gender')
+
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 64, in execute
+    result = code_manager.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+            
+2024-03-27 20:01:17 [INFO] Code generated:
+            ```
+            # Count the number of males and females
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title('Distribution of Passengers by Gender')
+
+plt.show()
+            ```
+            
+2024-03-27 20:01:18 [INFO] 
+Code running:
+```
+gender_counts = dfs[0]['Sex'].value_counts()
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Distribution of Passengers by Gender')
+plt.show()
+        ```
+2024-03-27 20:01:18 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 64, in execute
+    result = code_manager.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\helpers\code_manager.py", line 208, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 2, in <module>
+NameError: name 'plt' is not defined
+
+2024-03-27 20:01:18 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2024-03-27 20:01:18 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-03-27 20:01:18 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-03-27 20:01:18 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+The user asked the following question:
+### QUERY
+ Mostrame el nombre del pasajero de mayor edad y su edad
+### ANSWER
+ The oldest passenger is Barkworth, Mr. Algernon Henry Wilson with an age of 80.0.
+### QUERY
+ Mostrame el valor promedio del precio de los pasajes
+### ANSWER
+ The average fare price is $32.20
+### QUERY
+ Cuantas mujeres sobrevivieron?
+### ANSWER
+ 233
+### QUERY
+ Cuantas hombres sobrevivieron?
+### ANSWER
+ 109
+### QUERY
+ Grafico de barras de cantidad de pasajeros por clase
+### QUERY
+ Grafico de torta de cantidad de mujeres y hombres con la etiqueta del porcentaje de cada uno
+
+You generated this python code:
+# Count the number of males and females
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title('Distribution of Passengers by Gender')
+
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 64, in execute
+    result = code_manager.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\helpers\code_manager.py", line 208, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 2, in <module>
+NameError: name 'plt' is not defined
+
+
+Fix the python code above and return the new python code:
+2024-03-27 20:01:18 [INFO] Executing Step 1: CodeGenerator
+2024-03-27 20:01:20 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+The user asked the following question:
+### QUERY
+ Mostrame el nombre del pasajero de mayor edad y su edad
+### ANSWER
+ The oldest passenger is Barkworth, Mr. Algernon Henry Wilson with an age of 80.0.
+### QUERY
+ Mostrame el valor promedio del precio de los pasajes
+### ANSWER
+ The average fare price is $32.20
+### QUERY
+ Cuantas mujeres sobrevivieron?
+### ANSWER
+ 233
+### QUERY
+ Cuantas hombres sobrevivieron?
+### ANSWER
+ 109
+### QUERY
+ Grafico de barras de cantidad de pasajeros por clase
+### QUERY
+ Grafico de torta de cantidad de mujeres y hombres con la etiqueta del porcentaje de cada uno
+
+You generated this python code:
+# Count the number of males and females
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title('Distribution of Passengers by Gender')
+
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 64, in execute
+    result = code_manager.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\helpers\code_manager.py", line 208, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 2, in <module>
+NameError: name 'plt' is not defined
+
+
+Fix the python code above and return the new python code:
+            
+2024-03-27 20:01:20 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+# Count the number of males and females
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title('Distribution of Passengers by Gender')
+
+plt.show()
+            ```
+            
+2024-03-27 20:01:20 [INFO] 
+Code running:
+```
+gender_counts = dfs[0]['Sex'].value_counts()
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Distribution of Passengers by Gender')
+plt.show()
+        ```
+2024-03-27 20:01:21 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 64, in execute
+    result = code_manager.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+2024-03-27 20:01:21 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2024-03-27 20:01:21 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-03-27 20:01:21 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-03-27 20:01:21 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 87
+      - 245
+      - 809
+    - name: Survived
+      type: int64
+      samples:
+      - 1
+      - 1
+      - 0
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 1
+      - 3
+    - name: Name
+      type: object
+      samples:
+      - Behr, Mr. Karl Howell
+      - White, Mr. Percival Wayland
+      - Marechal, Mr. Pierre
+    - name: Sex
+      type: object
+      samples:
+      - male
+      - female
+      - male
+    - name: Age
+      type: float64
+      samples:
+      - .nan
+      - 0.42
+      - 52.0
+    - name: SibSp
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 4
+    - name: Parch
+      type: int64
+      samples:
+      - 5
+      - 2
+      - 0
+    - name: Ticket
+      type: object
+      samples:
+      - W./C. 6607
+      - '112059'
+      - '2641'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.75
+      - 55.0
+      - 73.5
+    - name: Cabin
+      type: object
+      samples:
+      - B51 B53 B55
+      - .nan
+      - D17
+    - name: Embarked
+      type: object
+      samples:
+      - S
+      - Q
+      - .nan
+
+
+The user asked the following question:
+### QUERY
+ Mostrame el nombre del pasajero de mayor edad y su edad
+### ANSWER
+ The oldest passenger is Barkworth, Mr. Algernon Henry Wilson with an age of 80.0.
+### QUERY
+ Mostrame el valor promedio del precio de los pasajes
+### ANSWER
+ The average fare price is $32.20
+### QUERY
+ Cuantas mujeres sobrevivieron?
+### ANSWER
+ 233
+### QUERY
+ Cuantas hombres sobrevivieron?
+### ANSWER
+ 109
+### QUERY
+ Grafico de barras de cantidad de pasajeros por clase
+### QUERY
+ Grafico de torta de cantidad de mujeres y hombres con la etiqueta del porcentaje de cada uno
+
+You generated this python code:
+import matplotlib.pyplot as plt
+
+# Count the number of males and females
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 6))
+plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title('Distribution of Passengers by Gender')
+
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 64, in execute
+    result = code_manager.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Norman\anaconda3\envs\prompt\Lib\site-packages\pandasai\helpers\code_manager.py", line 212, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+2024-03-27 20:01:21 [INFO] Executing Step 1: CodeGenerator
+2024-03-27 20:01:22 [INFO] error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-3.5-turbo in organization org-5ybzwKEuJoyz7LLX3EOJL62C on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.' error_param=None error_type=requests message='OpenAI API error received' stream_error=False
+2024-03-27 20:01:22 [ERROR] Pipeline failed on step 1: Rate limit reached for gpt-3.5-turbo in organization org-5ybzwKEuJoyz7LLX3EOJL62C on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.
+2024-03-27 20:01:22 [ERROR] Pipeline failed on step 5: Rate limit reached for gpt-3.5-turbo in organization org-5ybzwKEuJoyz7LLX3EOJL62C on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.
+2024-03-27 20:23:16 [INFO] Question: Grafico de barras de la cantidad de pasajeros mujeres y hombres
+2024-03-27 20:26:27 [INFO] Question: Grafico de barras de la cantidad de pasajeros mujeres y hombres
+2024-03-27 20:26:28 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-03-27 20:26:28 [INFO] Prompt ID: 73745359-5431-48d7-a295-bd4bd66c67ee
+2024-03-27 20:26:28 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 20:26:28 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 20:26:28 [INFO] Executing Step 1: CacheLookup
+2024-03-27 20:26:28 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 20:26:32 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 56
+      - 619
+      - 448
+    - name: Survived
+      type: int64
+      samples:
+      - 0
+      - 1
+      - 1
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 1
+    - name: Name
+      type: object
+      samples:
+      - Lefebre, Master. Henry Forbes
+      - Coleff, Mr. Satio
+      - Connors, Mr. Patrick
+    - name: Sex
+      type: object
+      samples:
+      - female
+      - male
+      - female
+    - name: Age
+      type: float64
+      samples:
+      - 54.0
+      - 51.0
+      - .nan
+    - name: SibSp
+      type: int64
+      samples:
+      - 1
+      - 0
+      - 2
+    - name: Parch
+      type: int64
+      samples:
+      - 4
+      - 3
+      - 6
+    - name: Ticket
+      type: object
+      samples:
+      - A/4. 34244
+      - F.C.C. 13531
+      - '345763'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.225
+      - 18.7875
+      - 15.55
+    - name: Cabin
+      type: object
+      samples:
+      - A6
+      - .nan
+      - A31
+    - name: Embarked
+      type: object
+      samples:
+      - Q
+      - S
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Grafico de barras de la cantidad de pasajeros mujeres y hombres
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 20:26:32 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 20:26:37 [INFO] Prompt used:
+            None
+            
+2024-03-27 20:26:37 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Filter the DataFrame to get the count of male and female passengers
+gender_counts = dfs[0]['Sex'].value_counts()
+
+# Create a bar plot
+plt.figure(figsize=(8, 6))
+gender_counts.plot(kind='bar', color=['blue', 'pink'])
+plt.title('Cantidad de pasajeros mujeres y hombres')
+plt.xlabel('Género')
+plt.ylabel('Cantidad de Pasajeros')
+plt.xticks(rotation=0)
+plt.show()
+
+# Declare result variable as a plot
+result = {"type": "plot", "value": "gender_bar_chart.png"}
+            ```
+            
+2024-03-27 20:26:37 [INFO] Executing Step 4: CachePopulation
+2024-03-27 20:26:37 [INFO] Executing Step 5: CodeExecution
+2024-03-27 20:26:37 [INFO] Saving charts to C:\CoderHouse\65805\Clase_6\exports\charts\temp_chart.png
+2024-03-27 20:26:37 [INFO] 
+Code running:
+```
+gender_counts = dfs[0]['Sex'].value_counts()
+plt.figure(figsize=(8, 6))
+gender_counts.plot(kind='bar', color=['blue', 'pink'])
+plt.title('Cantidad de pasajeros mujeres y hombres')
+plt.xlabel('Género')
+plt.ylabel('Cantidad de Pasajeros')
+plt.xticks(rotation=0)
+plt.show()
+result = {'type': 'plot', 'value': 'C:/CoderHouse/65805/Clase_6/exports/charts/temp_chart.png'}
+        ```
+2024-03-27 20:26:39 [ERROR] Pipeline failed on step 5: [Errno 2] No such file or directory: 'C:/CoderHouse/65805/Clase_6/exports/charts/temp_chart.png'
+2024-03-27 20:28:53 [INFO] Question: Que cantidad de pasajeros de primera clase habia en el titanic?
+2024-03-27 20:28:53 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-03-27 20:28:53 [INFO] Prompt ID: eaaf43ec-27cf-46b8-9d6e-6b99b2eb3c43
+2024-03-27 20:28:53 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 20:28:53 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 20:28:53 [INFO] Executing Step 1: CacheLookup
+2024-03-27 20:28:53 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 20:28:58 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 891
+  columns: 12
+  schema:
+    fields:
+    - name: PassengerId
+      type: int64
+      samples:
+      - 56
+      - 619
+      - 448
+    - name: Survived
+      type: int64
+      samples:
+      - 0
+      - 1
+      - 1
+    - name: Pclass
+      type: int64
+      samples:
+      - 2
+      - 3
+      - 1
+    - name: Name
+      type: object
+      samples:
+      - Lefebre, Master. Henry Forbes
+      - Coleff, Mr. Satio
+      - Connors, Mr. Patrick
+    - name: Sex
+      type: object
+      samples:
+      - female
+      - male
+      - female
+    - name: Age
+      type: float64
+      samples:
+      - 54.0
+      - 51.0
+      - .nan
+    - name: SibSp
+      type: int64
+      samples:
+      - 1
+      - 0
+      - 2
+    - name: Parch
+      type: int64
+      samples:
+      - 4
+      - 3
+      - 6
+    - name: Ticket
+      type: object
+      samples:
+      - A/4. 34244
+      - F.C.C. 13531
+      - '345763'
+    - name: Fare
+      type: float64
+      samples:
+      - 7.225
+      - 18.7875
+      - 15.55
+    - name: Cabin
+      type: object
+      samples:
+      - A6
+      - .nan
+      - A31
+    - name: Embarked
+      type: object
+      samples:
+      - Q
+      - S
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Que cantidad de pasajeros de primera clase habia en el titanic?
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-03-27 20:28:58 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 20:29:01 [INFO] Prompt used:
+            None
+            
+2024-03-27 20:29:02 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Filter the DataFrame to get the count of passengers in first class
+first_class_passengers = dfs[0][dfs[0]['Pclass'] == 1].shape[0]
+
+# Declare result variable
+result = { "type": "string", "value": f"The number of passengers in first class on the Titanic was: {first_class_passengers}" }
+            ```
+            
+2024-03-27 20:29:02 [INFO] Executing Step 4: CachePopulation
+2024-03-27 20:29:02 [INFO] Executing Step 5: CodeExecution
+2024-03-27 20:29:02 [INFO] 
+Code running:
+```
+first_class_passengers = dfs[0][dfs[0]['Pclass'] == 1].shape[0]
+result = {'type': 'string', 'value': f'The number of passengers in first class on the Titanic was: {first_class_passengers}'}
+        ```
+2024-03-27 20:29:02 [INFO] Executing Step 6: ResultValidation
+2024-03-27 20:29:02 [INFO] Answer: {'type': 'string', 'value': 'The number of passengers in first class on the Titanic was: 216'}
+2024-03-27 20:29:02 [INFO] Executing Step 7: ResultParsing
+2024-03-27 20:29:35 [INFO] Question: Grafico de barras de la cantidad de pasajeros mujeres y hombres
+2024-03-27 20:29:35 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-03-27 20:29:35 [INFO] Prompt ID: 83ab8c57-b6b2-429e-826c-a54cb5903b58
+2024-03-27 20:29:35 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-03-27 20:29:36 [INFO] Executing Step 0: ValidatePipelineInput
+2024-03-27 20:29:36 [INFO] Executing Step 1: CacheLookup
+2024-03-27 20:29:36 [INFO] Using cached response
+2024-03-27 20:29:36 [INFO] Executing Step 2: PromptGeneration
+2024-03-27 20:29:36 [INFO] Executing Step 2: Skipping...
+2024-03-27 20:29:36 [INFO] Executing Step 3: CodeGenerator
+2024-03-27 20:29:36 [INFO] Executing Step 3: Skipping...
+2024-03-27 20:29:36 [INFO] Executing Step 4: CachePopulation
+2024-03-27 20:29:36 [INFO] Executing Step 4: Skipping...
+2024-03-27 20:29:36 [INFO] Executing Step 5: CodeExecution
+2024-03-27 20:29:36 [INFO] Saving charts to C:\CoderHouse\65805\Clase_6\exports\charts\temp_chart.png
+2024-03-27 20:29:36 [INFO] 
+Code running:
+```
+gender_counts = dfs[0]['Sex'].value_counts()
+plt.figure(figsize=(8, 6))
+gender_counts.plot(kind='bar', color=['blue', 'pink'])
+plt.title('Cantidad de pasajeros mujeres y hombres')
+plt.xlabel('Género')
+plt.ylabel('Cantidad de Pasajeros')
+plt.xticks(rotation=0)
+plt.show()
+result = {'type': 'plot', 'value': 'C:/CoderHouse/65805/Clase_6/exports/charts/temp_chart.png'}
+        ```
+2024-03-27 20:29:37 [ERROR] Pipeline failed on step 5: [Errno 2] No such file or directory: 'C:/CoderHouse/65805/Clase_6/exports/charts/temp_chart.png'
